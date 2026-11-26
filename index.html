@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Grinch Escolar - Reseñas</title>
+  <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+
+<header>
+  <h1>💚 El Grinch en la Escuela</h1>
+  <p>¡Odio la escuela! Pero contaré mi historia... si te atreves a reseñarla</p>
+</header>
+
+<nav>
+  <a href="#foto">📸 Tomar Foto</a>
+  <a href="#reseña">⭐ Reseña</a>
+  <a href="#historias">📖 Historias</a>
+</nav>
+
+<main>
+  <!-- SECCION 1: TOMAR FOTO DE LA ESCUELA -->
+  <section id="foto" class="card">
+    <h2>1. Toma una foto de la escuela</h2>
+    <p>Captura la fachada de tu escuela como evidencia.</p>
+    <div class="camara-area">
+      <video id="video" autoplay playsinline></video>
+      <canvas id="canvas" style="display:none;"></canvas>
+      <img id="foto-preview" src="Img/l.jpg" alt="Foto escuela" width="100px">
+    </div>
+    <div class="botones">
+      <button onclick="iniciarCamara()">📷 Activar Cámara</button>
+      <button onclick="tomarFoto()">📸 Tomar Foto</button>
+      <input type="file" id="input-file" accept="image/*" onchange="cargarArchivo(event)">
+    </div>
+  </section>
+
+  <!-- SECCION 2: FORMULARIO DE RESEÑAS -->
+  <section id="reseña" class="card">
+    <h2>2. Formulario de Reseñas del Grinch</h2>
+    <p>¿Cómo es tu escuela? El Grinch quiere saber si es tan mala como dice.</p>
+    <form id="form-reseña">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <select id="grado" required>
+        <option value="">Tu grado</option>
+        <option>1ro</option>
+        <option>2do</option>
+        <option>3ro</option>
+        <option>Profesor</option>
+      </select>
+      <label>Califica tu escuela:</label>
+      <select id="calificacion" required>
+        <option value="">⭐ Elige</option>
+        <option value="5">⭐⭐⭐⭐⭐ La amo</option>
+        <option value="4">⭐⭐⭐⭐ Está bien</option>
+        <option value="3">⭐⭐⭐ Meh</option>
+        <option value="2">⭐⭐ El Grinch la odiaría</option>
+        <option value="1">⭐ ¡Que la robe el Grinch!</option>
+      </select>
+      <textarea id="comentario" placeholder="Escribe tu reseña de la escuela... ¿Qué odiaría el Grinch? ¿Qué le gustaría?" required></textarea>
+      <button type="submit">Enviar Reseña 💚</button>
+    </form>
+  </section>
+
+  <!-- SECCION 3: DONDE SE VEN LAS RESEÑAS -->
+  <section id="historias" class="card">
+    <h2>3. Muro de Reseñas</h2>
+    <div id="muro">
+      <div class="reseña-ejemplo">
+        <b>El Grinch (Director)</b> - ⭐⭐ - <i>"Odio las clases a las 7am. Demasiada alegría."</i>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Proyecto escolar - Sin Django - Solo estructura básica - Listo para GitHub Pages</p>
+  <p>URL para el profe: sube este proyecto a tu repositorio y activa Pages</p>
+</footer>
+
+<script src="Js/scripts.js"></script>
+</body>
+</html>
